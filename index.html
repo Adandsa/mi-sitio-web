@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta de Aviación</title>
+    <style>
+        .contenedor {
+            background-color: rgb(166, 17, 69);
+            width: 100vw;
+            height: 100vh;
+            text-align: center;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #no {
+            position: absolute;
+        }
+        #mensaje {
+            display: none;
+            font-size: 20px;
+            color: rgb(128, 0, 6);
+            margin-top: 20px;
+        }
+        #imagen {
+            margin-top: 10px;
+            width: 300px;
+            height: max-content;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿pato quieres comer a tus parrientes los pollos, pero tu pagarias ? TU CASTIGO POR ENOJARTE :,) </h1>
+    
+    <!-- Imagen predeterminada -->
+    <img id="imagen" src="principal.jpg" alt="Imagen de aviación">
+    
+    <br>
+    
+    <button id="si">Sí </button>
+    <button id="no">No </button>
+    
+    <!-- Mensaje que se muestra cuando se hace clic en "Sí" -->
+    <p id="mensaje">¡Sabia que aceptarias , entonces cuando nos comemos !  LOS POLLITOS </p>
+
+    <script>
+        const btnSi = document.getElementById('si');
+        const btnNo = document.getElementById('no');
+        const mensaje = document.getElementById('mensaje');
+        const imagen = document.getElementById('imagen');
+
+        // Cuando hace clic en "Sí me gusta"
+        btnSi.addEventListener('click', () => {
+            mensaje.style.display = 'block';  // Muestra el mensaje "¡Lo sabía!"
+            imagen.src = 'secundario.jpg';     // Cambia la imagen
+        });
+
+        // Mover el botón "No me gusta" cuando se intenta hacer clic
+        btnNo.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - btnNo.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btnNo.offsetHeight);
+            btnNo.style.left = `${x}px`;
+            btnNo.style.top = `${y}px`;
+        });
+    </script>
+</body>
+</html>
+
